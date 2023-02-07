@@ -1,0 +1,1059 @@
+<style>
+    .fixedfooter {
+        background-color: rgb(54, 65, 80);
+        margin-left: 0rem !important;
+    }
+    
+    .footertext1 {
+        left: 0 !important;
+    }
+    
+    input:required {
+        box-shadow: none;
+    }
+    /*input:invalid {
+        box-shadow:0 0 0.188rem red;
+    }*/
+    
+    .bootstrap-datetimepicker-widget {
+        display: block;
+    }
+    
+    .bootstrap-datetimepicker-widget .datepicker-days {
+        display: block;
+    }
+    
+    .bootstrap-datetimepicker-widget .datepicker-months {
+        display: block;
+    }
+    
+    .bootstrap-datetimepicker-widget .datepicker-years {
+        display: block;
+    }
+    
+    .bootstrap-datetimepicker-widget .datepicker-decades {
+        display: block;
+    }
+    
+    .input-group-addon {
+        padding: 0;
+    }
+    
+    .glyphicon {
+        padding: 0.563rem 0.625rem;
+    }
+    
+    .addAdditionalFields {
+        /*color: #333;*/
+        background-color: #f5f5f5;
+        border: 0.063rem solid #ddd;
+        padding: 0.625rem;
+    }
+    
+    .addBorder {
+        border: 0.063rem solid #ddd;
+        padding: 0.625rem;
+    }
+    
+    .close {
+        opacity: 1;
+    }
+    
+    .DatePicker,
+    .TimePicker {
+        z-index: 0 !important
+    }
+    
+    table>tbody>tr>th {
+        background: #cad5eb;
+        color: #1d2e50;
+        text-align: center;
+    }
+    
+    .table-bordered>tbody>tr>td {
+        border: 0.063rem solid #c5c5c5;
+    }
+
+    .CreateUserlogo{
+            margin-bottom:0.625rem;
+            margin-bottom: 0.625rem;
+            margin-left: 0.438rem;
+            margin-top: 0rem !important;
+            padding: 0.625rem;
+    }
+
+    .alertFont{
+        font-size:0.875rem;
+    }
+    .modalSize{
+        max-width: 37.5rem;
+    }
+    .modalContent{
+        border:0.125rem solid #243250a6;
+    }
+    
+    .modalPrimarykey{
+        font-size:1.063rem;
+    }
+
+    .portletTop{
+        margin-top:1.438rem;
+    }
+
+    .portletForm{
+        margin-bottom:0rem;
+    }
+
+    .portletAlighn{
+        padding:0rem !important
+    }
+
+    .textAlighn{
+        padding: 0.5rem;
+        right: 0.938rem;
+    }
+
+    .marginAlighn{
+        margin:0
+    }
+
+    .fieldAlighn{
+        margin-top:0.625rem;
+        margin-bottom:2.125rem;
+    }
+
+    .asterisk{
+        color:#e02222;
+        font-size:0.75rem;
+        padding-left:0.125rem
+    }
+
+    .requiredDisp{
+        display:block;
+        margin:0;
+        color:#EF1C1C !important; 
+        padding: 0.5rem;
+        right: 0.938rem;
+    }
+    
+    .mailValid{
+        border-radius:1.25rem !important;
+    }
+
+    .cursorAlighn{
+        cursor:pointer
+    }
+
+    .tableLayout{
+        table-layout:fixed;
+    }
+
+    .alighntext{
+        text-align:center
+    }
+
+    .noassociateAlert{
+        padding: 0.938rem;
+        margin-bottom: 0.313rem;
+        background-color: #fcf8e375 !important;
+    }
+
+    .noassociaterolesAlighn{
+        margin:0;
+        text-align:center;
+    }
+
+    .formuserAlighn{
+        padding-top:0.313rem;
+    }
+
+    .colorNote{
+        color:#000;
+    }
+
+    .colorAdmin{
+        color:red;
+    }
+
+    .buttonAlighn{
+        padding-right:1.75rem;
+        float: right;
+    }
+
+    .buttontextAlighn{
+        margin-right: 0.313rem;
+    }
+
+    .labelAlighn{
+        margin-right: 0rem !important;
+        margin-left: 0rem  !important;
+    }
+
+    .theaderWidth{
+        width: 20.938rem;
+    }
+
+    .labelDisp{
+        padding-left: 0rem;
+        padding-right: 0rem;
+    }
+
+    .idAlighn{
+        text-align:left;
+        word-wrap: break-word;
+        
+    }
+
+    .borderVerify{
+        border: 0.063rem solid #ccc;
+    }
+
+    .portlet.box .portlet-body {
+        background: #F2F2F2;
+    }
+
+    .tableAlighn{
+        overflow-x: auto !important;    
+        padding-right: 0rem;
+    }
+
+</style>
+
+<!-- BEGIN PAGE HEADER-->
+<div class="breadCrumb" set-class-when-at-top="fix-to-top" ng-controller="activeController" ng-show="showBreadcrumb">
+    <div class="row">
+        <div class="col-md-6 ">
+            <ul class="page-breadcrumb">
+                <!--<li>
+                    <i class="fa fa-home"></i>
+                        <a href="javascript:void(0)" translate ng-click="goToHome()">Sidebar.Home</a>
+                        <i class="fa fa-angle-right"></i>
+                </li>-->
+                <li>
+                    <i class="fa fa-user"></i>
+                    <a href="javascript:void(0)" translate class="removeCursor">Admin Panel</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+                <li translate>
+                    Sidebar.AddUser
+                </li>
+            </ul>
+        </div>
+        
+        <div class="col-md-6 headerVals">
+            <div data-ng-include="'templates/header/VPheader.html'" data-ng-controller="headerCtrl"></div>
+
+        </div>
+    </div>
+
+</div>
+
+<div ng-if="!showMoreFieldOnCreateUser">
+    <div class="row">
+        <div class="logo CreateUserlogo" ng-style="{'background-color':(configData.ThemeName == 'volante')?'#364150':'#fff'}">
+            <a href="index.html">
+                <img ng-src="themes/{{configData.ThemeName}}/logo.png" alt="">
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<div class="contentContainer">
+
+    <div class="tab-content">
+
+        <div ng-style="{'top':alertStyle+'px','width':alertWidth+'px'}" class="autoAdjustAlert bold animated bounce alertFont" ng-class="{'alert alert-success': alert.type == 'success','alert alert-danger':alert.type == 'danger'}" ng-repeat="alert in alerts">
+            <a class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            {{alert.msg}}
+        </div>
+
+        <div class="modal fade" id="changesLostModal" role="dialog" tabindex="-1">
+            <div class="modal-dialog modalSize">
+                <div class="modal-content modalContent" ng-if="madeChanges">
+                    <div class="modal-body">
+                        <h5 translate>BankDataDts.PopupMsg</h5>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btnStyle" ng-click="gotoClickedPage();" translate>BankDataDts.Yes</button>
+                        <button type="button" class="btn btnStyle" data-dismiss="modal" ng-click="cancelChanges()" translate>BankDataDts.No</button>
+                    </div>
+                </div>
+
+                <div class="modal-content modalContent"  ng-if="!madeChanges">
+                    <div class="modal-body">
+                        <h4 class="modalPrimarykey">Primary key fields are missing.UUID will be autogenerated.<br>Do you wish to continue?</h4>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btnStyle clr" ng-click="SaveAsModalDraft()"><span translate>
+                                Yes</span></button>
+
+                        <button type="button" class="btn btnStyle" data-dismiss="modal" ng-click="cancelChanges()" translate>BankDataDts.No</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="modal fade" id="draftOverWriteModal" role="dialog" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content modalContent" ng-if="!updateEntity">
+                    <div class="modal-body">
+                        <h4>Draft Already Exists. Do you want to Overwrite?</h4>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btnStyle" ng-click="forceSaveDraft();" translate>BankDataDts.Yes</button>
+                        <button type="button" class="btn btnStyle" data-dismiss="modal" translate>BankDataDts.No</button>
+
+                    </div>
+                </div>
+                <div class="modal-content modalContent" ng-if="updateEntity">
+                    <div class="modal-body">
+                        <h4>This will update the actual entity. Do you wish to continue?</h4>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btnStyle" ng-click="addUserandForseSaveUser(method,takeuserbckup);" translate>BankDataDts.Yes</button>
+                        <button type="button" class="btn btnStyle" data-dismiss="modal" ng-click="resetAllDrafts()" translate>BankDataDts.No</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="portlet box green-haze portletTop" id="form_wizard_1">
+
+            <div class="portlet-title" ng-init="page = 1">
+                <div class="caption">
+                    <i class="fa fa-pencil"></i> Registration - <span class="step-title">
+                        Step {{page}} of 2 </span>
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <div class="form-wizard">
+                    <div class="form-body">
+                        <ul class="navs nav-pills nav-justified steps row m-0 portletForm">
+                            <li id="li_1" class="tab_li active col-md-6 text-md-center">
+                                <a class="step portletAlighn">
+                                    <span class="number">
+                                        1 </span>
+                                    <span class="desc">
+                                        <i class="fa fa-check"></i> {{'UserManagement.CreateUser' | translate}}</span>
+                                </a>
+                            </li>
+                            <li id="li_2" class="tab_li col-md-6 text-md-center">
+                                <a class="step portletAlighn">
+                                    <span class="number">
+                                        2 </span>
+                                    <span class="desc">
+                                        <i class="fa fa-check"></i> {{'UserManagement.VerifyUser' | translate}}</span>
+                                </a>
+                            </li>
+
+                        </ul>
+
+
+                        <br /><br />
+
+
+                        <div id="bar" class="progress  active portletForm" role="progressbar">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated progress-bar-success" ng-style="{width:hello+'%'}">
+                            </div>
+                        </div>
+
+                        <div class="tab-content">
+
+                            <div class="tab-pane active animated" id="tab1">
+                                <form name="form1" class="form-horizontal" id="submit_form1" ng-submit="submitted=true; continue1(createData)">
+                                    <h4 class="block pt-2 textAlighn" translate>UserManagement.CreateUser </h4>
+                                    
+
+
+                                    <div class="row marginAlighn">
+
+                                        <div class="form-group row col-md-6 col-sm-6 fieldAlighn">
+
+                                            <label class="control-label bold col-md-3 col-sm-4 text-sm-left text-md-right text-lg-right text-xl-right mt-1" name="UserID">User ID
+                                                <span class="asterisk" 
+                                                    aria-required="true">*</span></label>
+
+                                            <div class="col-md-8 col-sm-8 ">
+                                                <input type="text" placeholder="Please Enter User ID" name="UserID" ng-model="createData.UserID" class="form-control NotAllowSpecialCharacters" ng-blur="multipleEmptySpace($event)" ng-class="{true : 'error'}[submitted && form1.UserID.$invalid]" required>
+
+                                            </div>
+                                            <span class="help-inline col-md-1 requiredDisp" ng-show="submitted && form1.UserID.$error.required">Required</span>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row marginAlighn">
+                                        <div class="form-group col-md-6 col-sm-6 row fieldAlighn">
+                                            <label class="control-label bold col-md-3 col-sm-4 text-sm-left text-md-right text-lg-right text-xl-right mt-1">First Name <span
+                                                class="asterisk"
+                                                    aria-required="true">*</span></label>
+
+                                            <div class="col-md-8 col-sm-8">
+                                                <input type="text" class="form-control" placeholder="Please Enter First Name" name="FirstName" ng-model="createData.FirstName" ng-blur="multipleEmptySpace($event)" ng-class="{true : 'error'}[submitted && form1.FirstName.$invalid]" required />
+
+                                            </div>
+                                            <span class="help-inline col-md-1 requiredDisp" ng-show="submitted && form1.FirstName.$error.required">Required</span>
+                                        </div>
+
+                                        <div class="form-group col-md-6 col-sm-6 row fieldAlighn" >
+                                            <label class="control-label bold col-md-3 col-sm-4 text-sm-left text-md-right text-lg-right text-xl-right mt-1">Last Name <span
+                                                class="asterisk"
+                                                    aria-required="true">*</span></label>
+                                            <div class="col-md-8 col-sm-8">
+                                                <input type="text" class="form-control" placeholder="Please Enter Last Name" name="LastName" ng-model="createData.LastName" ng-blur="multipleEmptySpace($event)" ng-class="{true : 'error'}[submitted && form1.LastName.$invalid]" required />
+
+                                            </div>
+                                            <span class="help-inline  col-md-1 requiredDisp" ng-show="submitted && form1.LastName.$error.required">Required</span>
+                                        </div>
+                                    </div>
+                                    <div class="row marginAlighn">
+                                        <div class="form-group col-md-6 col-sm-6 row fieldAlighn">
+                                            <label class="control-label bold col-md-3 col-sm-4 text-sm-left text-md-right text-lg-right text-xl-right mt-1">Email ID <span
+                                                class="asterisk"
+                                                    aria-required="true">*</span></label>
+
+                                            <div class="col-md-8 col-sm-8">
+                                                <input type="email" placeholder="Please Enter Email ID" class="form-control" name="EmailAddress" required ng-blur="multipleEmptySpace($event);emailValidate(createData.EmailAddress)" ng-model="createData.EmailAddress" id="AddUserMail" ng-class="{true : 'error'}[submitted && form1.EmailAddress.$invalid]"
+                                                />
+
+                                            </div>
+                                            <span class="help-inline  col-md-1 requiredDisp" ng-show="submitted && form1.EmailAddress.$error.required" >Required</span>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row marginAlighn">
+                                        <div class="form-group col-md-6 col-sm-6 row fieldAlighn">
+                                            <label class="control-label bold col-md-3 col-sm-4 col-xs-12 text-sm-left text-md-right text-lg-right text-xl-right mt-1">Password
+                                                <span class="asterisk"
+                                                    aria-required="true">*</span></label>
+
+                                            <div class="col-md-7 col-sm-7 col-xs-8">
+                                                <input class="key form-control" type="text" autocomplete="off" placeholder="Please Enter Password" name="Password" ng-model="createData.Password" onkeydown="return spaceNotAllowed(event)" ng-blur="validatePassWord(createData.Password, $event)" ng-class="{true : 'error'}[submitted && form1.Password.$invalid]"
+                                                    ng-keyup="changetoPasswordFormat($event,createData.Password)" required id="createDataPassword" />
+                                                <!-- <input type="password" placeholder="Please Enter Password" class="form-control"
+                                                    name="Password" ng-model="createData.Password" onkeydown="return spaceNotAllowed(event)"
+                                                    ng-blur="validatePassWord(createData.Password, $event)" ng-class="{true : 'error'}[submitted && form1.Password.$invalid]"
+                                                    required /> -->
+
+                                            </div>
+                                            <div class="col-md-1 col-sm-1 col-xs-4">
+                                                <button type="button" tabindex="-1" class="btn mailValid" data-container="body" data-toggle="popover" data-placement="right" data-content="Please ensure the password entered is between 8 and 14 characters long, and include 3 out of 4 of the following: lower case, uppercase, numbers or special characters ! &#34; # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~  "
+                                                    data-original-title="" title=""><span
+                                                        class="questionMark">?</span></button>
+                                            </div>
+
+                                            <span class="help-inline  col-md-1 requiredDisp" ng-show="submitted && form1.Password.$error.required">Required</span>
+                                        </div>
+
+                                        <div class="form-group col-md-6 col-sm-4 row fieldAlighn">
+                                            <label class="control-label bold col-md-3 col-sm-4 text-sm-left text-md-right text-lg-right text-xl-right mt-1">Confirm Password <span
+                                                class="asterisk"
+                                                    aria-required="true">*</span></label>
+
+                                            <div class="col-md-8 col-sm-8">
+                                                <input class="key form-control" type="text" autocomplete="off" placeholder="Please Enter Confirm Password" name="ConfirmPW" ng-model="ConfirmPW" onkeydown="return spaceNotAllowed(event);" ng-class="{true : 'error'}[submitted && form1.ConfirmPW.$invalid]"
+                                                    ng-keyup="changetoPasswordFormat($event,ConfirmPW)" required id="ConfirmPW" />
+                                                <!--  <input type="password" placeholder="Please Enter Confirm Password"
+                                                    class="form-control" name="ConfirmPW" ng-model="ConfirmPW"
+                                                    onkeydown="return spaceNotAllowed(event);" ng-class="{true : 'error'}[submitted && form1.ConfirmPW.$invalid]"
+                                                    required /> -->
+
+                                            </div>
+                                            <span class="help-inline  col-md-1 requiredDisp" ng-show="submitted && form1.ConfirmPW.$error.required">Required</span>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row marginAlighn" ng-if="showMoreFieldOnCreateUser">
+                                        <div class="form-group col-md-6 col-sm-6 row fieldAlighn">
+                                            <label class="control-label bold col-md-3 col-sm-4 text-sm-left text-md-right text-lg-right text-xl-right mt-1">Role ID <span
+                                                class="asterisk"
+                                                    aria-required="true">*</span></label>
+                                            <div class="col-md-8 col-sm-8">
+                                                <select class="form-control appendRoleId" required="true" name="RoleID" id="RoleId" ng-model="createData.RoleID1" select2-model-append ng-class="{true : 'error'}[submitted && form1.RoleID.$invalid]" multiple ng-change="createDynamicSubsection(createData.RoleID1)">
+                                                    <!--<option value="">--Select--</option>-->
+                                                    <option ng-repeat="option in selectOptions"
+                                                        value="{{option.RoleID}}">
+                                                        {{option.RoleName+'('+option.RoleID+')'}}</option>
+                                                </select>
+                                            </div>
+                                            <span class="help-inline col-md-1 requiredDisp" ng-show="submitted && form1.RoleID.$error.required">Required</span>
+                                        </div>
+
+                                        <div class="form-group col-md-6 col-sm-6 row fieldAlighn">
+                                            <label class="control-label bold col-md-3 col-sm-4 text-sm-left text-md-right text-lg-right text-xl-right mt-1 pl-0">Reset Password <span
+                                                class="asterisk"
+                                                    aria-required="true">*</span></label>
+
+                                            <div class="col-md-8 col-sm-8 ">
+                                                <select class="form-control" ng-init="createData.IsForceReset='true'" name="IsForceReset" ng-model="createData.IsForceReset" disabled ng-class="{true : 'error'}[submitted && form1.IsForceReset.$invalid]">
+                                                    <option value="true">true</option>
+                                                    <option value="false">false</option>
+                                                </select>
+
+                                            </div>
+                                            <span class="help-inline col-md-1 requiredDisp" ng-show="submitted && form1.IsForceReset.$error.required">Required</span>
+                                        </div>
+                                    </div>
+                                    <div class="row marginAlighn">
+
+                                        <div class="form-group col-md-6 col-sm-6 row fieldAlighn">
+                                            <label class="control-label bold col-md-3 col-sm-4 text-sm-left text-md-right text-lg-right text-xl-right mt-1">Country</label>
+
+                                            <div class="col-md-8 col-sm-8">
+                                                <select class="form-control" name="Country" id="country" ng-model="createData.Country" select2-model-append ng-class="{true : 'error'}[submitted && form1.Country.$invalid]">
+                                                    <option value="">--Select--</option>
+                                                    <option ng-repeat="country in countryOption"
+                                                        value="{{country.actualvalue}}">
+                                                        {{country.displayvalue}}</option>
+                                                </select>
+
+                                            </div>
+                                            <span class="help-inline col-md-1 requiredDisp" ng-show="submitted && form1.Country.$error.required" >Required</span>
+                                        </div>
+
+                                        <div class="form-group col-md-6 col-sm-6 row fieldAlighn">
+                                            <label class="control-label bold col-md-3 col-sm-4 text-sm-left text-md-right text-lg-right text-xl-right mt-1">Department</label>
+
+                                            <div class="col-md-8 col-sm-8">
+                                                <select class="form-control" select2-model-append name="Department" id="Department" ng-model="createData.Department" ng-class="{true : 'error'}[submitted && form1.Department.$invalid]">
+                                                    <option value="">--Select--</option>
+                                                    <option value="Technology">Technology</option>
+                                                    <option value="Draft Operations">Draft Operations</option>
+                                                    <option value="OSA Operations">OSA Operations</option>
+                                                </select>
+                                            </div>
+                                            <span class="help-inline col-md-1 requiredDisp" ng-show="submitted && form1.Department.$error.required">Required</span>
+                                        </div>
+                                    </div>
+                                    <div class="row marginAlighn">
+
+                                        <div class="form-group col-md-6 col-sm-6 row fieldAlighn" ng-if="showMoreFieldOnCreateUser">
+                                            <label class="control-label bold col-md-3 col-sm-4 text-sm-left text-md-right text-lg-right text-xl-right mt-1">Status <span
+                                                class="asterisk"
+                                                    aria-required="true">*</span></label>
+
+                                            <div class="col-md-8 col-sm-8">
+                                                <select class="form-control" required name="Status" id="enableFlag" ng-model="createData.Status" ng-class="{true : 'error'}[submitted && form1.Status.$invalid]">
+                                                    <option value="">--Select--</option>
+                                                    <option value="ACTIVE">ACTIVE</option>
+                                                    <option value="INACTIVE">INACTIVE</option>
+                                                    <option value="SUSPENDED">SUSPENDED</option>
+                                                </select>
+
+                                            </div>
+                                            <span class="help-inline col-md-1 requiredDisp" ng-show="submitted && form1.Status.$error.required">Required</span>
+                                        </div>
+
+                                        <div class="form-group col-md-6 col-sm-6 row fieldAlighn">
+                                            <label class="control-label bold col-md-3 col-sm-4 text-sm-left text-md-right text-lg-right text-xl-right mt-1">Time Zone <span
+                                                class="asterisk"
+                                                    aria-required="true">*</span></label>
+
+                                            <div class="col-md-8 col-sm-8">
+                                                <select class="form-control" required select2-model-append name="TimeZone" id="timeZone" ng-model="createData.TimeZone" ng-class="{true : 'error'}[submitted && form1.TimeZone.$invalid]">
+                                                    <option value="">--Select--</option>
+                                                    <option ng-repeat="option in timezoneOptions" value="{{option.TimeZoneId}}">
+                                                        {{option.TimeZoneId}}</option>
+                                                </select>
+                                            </div>
+                                            <span class="help-inline col-md-1 requiredDisp" ng-show="submitted && form1.TimeZone.$error.required">Required</span>
+                                        </div>
+
+                                    </div>
+                                    <div class="row marginAlighn" ng-if="showMoreFieldOnCreateUser">
+
+                                        <div class="form-group col-md-6 col-sm-6 row fieldAlighn"  ng-if="showMoreFieldOnCreateUser">
+                                            <label class="control-label bold col-md-3 col-sm-4 text-sm-left text-md-right text-lg-right text-xl-right mt-1">Effective From Date
+                                                <span class="asterisk"
+                                                    aria-required="true">*</span></label>
+
+                                            <div class="col-md-8 col-sm-8">
+                                                <div class="input-group input-append">
+                                                    <input type="text" class="form-control DatePicker dateTypeKey" roledateattr="EffectiveFromDate" name="EffectiveFromDate" placeholder="Please Enter Effective From Date" onpaste="return false" onkeypress='return tabOrder(event)' ng-blur="multipleEmptySpace($event)"
+                                                        id="EffectiveFromDate" ng-model="createData.EffectiveFromDate" ng-required="true" ng-class="{true : 'error'}[submitted && form1.EffectiveFromDate.$invalid]" />
+
+                                                    <span class="input-group-text cursorAlighn" ng-click="triggerPicker($event)"><span
+                                                            class="fa fa-calendar date-set"></span>
+                                                    </span>
+
+                                                </div>
+
+                                            </div>
+                                            <span class="help-inline col-md-1 requiredDisp" ng-show="submitted && form1.EffectiveFromDate.$error.required">Required</span>
+                                        </div>
+                                        <div class="form-group col-md-6 col-sm-6 row fieldAlighn">
+                                            <label class="control-label bold col-md-3 col-sm-4 text-sm-left text-md-right text-lg-right text-xl-right mt-1">Effective Till Date
+                                            </label>
+
+                                            <div class="col-md-8 col-sm-8">
+                                                <div class="input-group input-append">
+                                                    <input type="text" class="form-control DatePicker dateTypeKey" name="EffectiveTillDate" roledateattr="EffectiveTillDate" placeholder="Please Enter Effective Till Date" onpaste="return false" onkeypress='return tabOrder(event)' ng-blur="multipleEmptySpace($event)"
+                                                        id="EffectiveTillDate" ng-model="createData.EffectiveTillDate" />
+                                                    <span class="input-group-text cursorAlighn" ng-click="triggerPicker($event)"><span
+                                                            class="fa fa-calendar date-set"></span>
+                                                    </span>
+
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group col-md-6 col-sm-6 row fieldAlighn">
+                                            <label class="control-label bold col-md-3 col-sm-4 text-sm-left text-md-right text-lg-right text-xl-right mt-1">Is API User <span
+                                                class="asterisk"
+                                                    aria-required="true">*</span></label>
+
+                                            <div class="col-md-8 col-sm-8 ">
+                                                <select class="form-control" required ng-init="createData.IsAPIUser='true'" name="IsAPIUser" ng-model="createData.IsAPIUser" ng-class="{true : 'error'}[submitted && form1.IsAPIUser.$invalid]">
+                                                    <option value="true">true</option>
+                                                    <option value="false">false</option>
+                                                </select>
+
+                                            </div>
+                                            <span class="help-inline col-md-1 requiredDisp" ng-show="submitted && form1.IsAPIUser.$error.required">Required</span>
+                                        </div>
+                                    </div>
+
+                                    
+                                    <div class="form-group col-md-6 col-sm-6 row fieldAlighn">
+                                        <label class="control-label bold col-md-3 col-sm-4 text-sm-left text-md-right text-lg-right text-xl-right mt-1">Sur Name <span
+                                            class="asterisk"
+                                                aria-required="true">*</span></label>
+
+                                        <div class="col-md-8 col-sm-8">
+                                            <input type="text" class="form-control" placeholder="Please Enter Sur Name" name="SurName" ng-model="createData.SurName" required />
+
+                                        </div>
+                                        <!-- <span class="help-inline col-md-1 requiredDisp" ng-show="submitted && form1.SurName.$error.required">Required</span> -->
+                                    </div>
+            
+                                    <div ng-if="showMoreFieldOnCreateUser">
+                                        <h6 class="bold col-md-12">User Role Association
+                                            <span class="asterisk" aria-required="true">*</span>
+                                            <span> : </span><span>(This field will be displayed based on Role ID
+                                                selection)</span>
+                                        </h6>
+
+                                    </div>
+
+
+                                    
+
+                                    <div class="col-md-12">
+                                        <!--<form>-->
+                                        <table class="table table-bordered table-layout:fixed;" ng-if="createData.UserRoleAssociation.length > 0">
+                                            <tr>
+                                                <th>Action</th>
+                                                <th>Role ID <span class="asterisk" 
+                                                    aria-required="true">*</span></th>
+                                                <th>Status <span class="asterisk" 
+                                                    aria-required="true">*</span></th>
+                                                <th>Effective From Date <span class="asterisk" 
+                                                    aria-required="true">*</span></th>
+                                                <th>Effective Till Date</th>
+                                            </tr>
+
+
+                                            <tr ng-repeat="val in createData.UserRoleAssociation track by $index" id="{{$index}}">
+                                                <td class="radioGroups alighntext">
+                                                    <input type="radio" name="SubSec_Action" id="SubSec_Action_ID{{$index}}" value="{{createData.UserRoleAssociation[$index].RoleID}}" ng-checked="$first" class="radiobtns">
+                                                </td>
+                                                <td>
+
+                                                    <select class="form-control appendRoleId clearRoleModelValue" name="Subsec_RoleID{{$index}}" id="RoleId{{$index}}" customattr="RoleID" select2-model-append ng-model="createData.UserRoleAssociation[$index].RoleID" ng-required="true" ng-if="createData.UserRoleAssociation[$index].RoleID != 'Super Admin'">
+                                                        <option value="">--Select--</option>
+                                                        <option ng-repeat="option in selectMultOptions"
+                                                            value="{{option.RoleID}}">
+                                                            {{option.RoleName+'('+option.RoleID+')'}}</option>
+                                                    </select>
+
+                                                    <input class="form-control" type="text" name="Subsec_RoleID" ng-model="createData.UserRoleAssociation[$index].RoleID" ng-disabled="true" required ng-if="createData.UserRoleAssociation[$index].RoleID == 'Super Admin'">
+
+                                                    <span class="help-inline requiredDisp" ng-show="submitted && form1.Subsec_RoleID{{$index}}.$error.required && !createData.UserRoleAssociation[$index].RoleID">Required</span>
+
+
+                                                </td>
+                                                <td>
+                                                    <select class="form-control" name="Subsec_Status" id="Status{{$index}}" ng-model="createData.UserRoleAssociation[$index].Status" ng-required="true" ng-disabled="(createData.UserRoleAssociation[$index].RoleID == 'Super Admin') ? true : false ">
+                                                        <option value="">--Select--</option>
+                                                        <option value="ACTIVE">ACTIVE</option>
+                                                        <option value="INACTIVE">INACTIVE</option>
+                                                        <option value="SUSPENDED">SUSPENDED</option>
+                                                    </select>
+
+                                                    <span class="help-inline requiredDisp" ng-show="submitted && form1.Subsec_Status.$error.required && !createData.UserRoleAssociation[$index].Status">Required</span>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group input-append">
+                                                        <input type="text" class="form-control DatePicker dateTypeKey" name="EffectiveFromDate{{$index}}" roleattr="EffectiveFromDate" autocomplete="off" placeholder="Please Enter Effective From Date" onpaste="return false" onkeypress='return tabOrder(event)' ng-blur="multipleEmptySpace($event)"
+                                                            id="Subsec_EffectiveFromDate{{$index}}" ng-focus="activatePick($event,$index)" ng-model="createData.UserRoleAssociation[$index].EffectiveFromDate" ng-required="true" />
+
+                                                        <span class="input-group-text input-group-date cursorAlighn" ng-click="triggerPickerSubSec($event,$index)"><span
+                                                                class="fa fa-calendar date-set"></span>
+                                                    </div>
+
+                                                    <span class="help-inline requiredDisp" ng-show="submitted && form1.EffectiveFromDate{{$index}}.$error.required && !createData.UserRoleAssociation[$index].EffectiveFromDate" >Required</span>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group input-append">
+
+
+                                                        <input type="text" class="form-control DatePicker dateTypeKey" name="EffectiveTillDate{{$index}}" roleattr="EffectiveTillDate" placeholder="Please Enter Effective Till Date" autocomplete="off" onpaste="return false" onkeypress='return tabOrder(event)' ng-blur="multipleEmptySpace($event)"
+                                                            id="Subsec_EffectiveTillDate{{$index}}" ng-focus="activatePick($event,$index)" ng-model="createData.UserRoleAssociation[$index].EffectiveTillDate" />
+                                                        <span class="input-group-text input-group-date cursorAlighn" ng-click="triggerPickerSubSec($event,$index)"><span
+                                                                class="fa fa-calendar date-set"></span>
+
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+
+                                            <!--</div>-->
+                                        </table>
+
+                                        <div class="alert-warning noassociateAlert" ng-if="createData.UserRoleAssociation.length <= 0">
+                                            <strong>
+                                                <h5 class="noassociaterolesAlighn"> <i class="fa fa-warning"></i>
+                                                    No associated roles found</h5>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-12 formuserAlighn">
+                                                <div class="col-md-8" ng-if="!showMoreFieldOnCreateUser">
+
+
+                                                    <span><b class="colorNote">Note:</b> <span>The first user will be
+                                                            a <b class="colorAdmin">super admin</b>. Please reset your
+                                                            password on first login.</span></span>
+                                                </div>
+
+
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+
+                                        <div class="row">
+
+                                            <div class="col-md-12 pr-0">
+                                                <div class="row">
+                                                    <!-- <div class="col-md-8">
+
+                                                    </div> -->
+                                                    <div class="col-md-12 buttonAlighn">
+
+                                                        <!--<div class="col-md-1">-->
+
+                                                        <!--</div>-->
+                                                        <!--<div class="col-md-1">-->
+                                                        <div class="pull-right">
+                                                            <button type="submit" class="btn btnStyle green buttontextAlighn" ng-show="current1" id="Continue1" ng-click="submitted=true" translate>BtnGroup.Continue
+                                                                <i class="fa fa-arrow-circle-right"></i></button>
+                                                            <!--</div>-->
+                                                            <!--<div class="col-md-1">-->
+                                                            <button type="button" ng-if="showMoreFieldOnCreateUser" class="btn btnStyle green buttontextAlighn" ng-click="SaveAsDraft(createData);takeBackupData(createData)" tooltip="{{'BtnGroup.SaveasDraft' | translate}}" translate> BtnGroup.SaveasDraft </button>
+
+                                                            <button type="button" class="btn btnStyle buttontextAlighn" ng-if="showMoreFieldOnCreateUser" data-toggle="modal" data-target="{{madeChanges ?'#changesLostModal':''}}" ng-click="updatesubmitted=false;gotoCancelFn()"  translate>BtnGroup.Cancel</button>
+                                                            <!--</div>-->
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+
+                                            </div>
+                                            <div class="clearfix"> </div>
+
+                                        </div>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                            <div class="tab-pane animated" id="tab2" ng-class="{'slideInRight':current2 == true, 'slideInLeft':current2==false }">
+                                <form name="form2" class="form-horizontal">
+                                    <h4 class="block pt-2">Verify User</h4>
+
+                                 <div class="borderVerify">
+                                   <div class="offset-1">
+                                     <div class="row marginAlighn">
+                                        <div class="form-group col-md-6 col-sm-6 row fieldAlighn">
+                                            <label class="control-label bold col-md-6 col-sm-6 text-sm-left text-md-right text-lg-right text-xl-right pl-0"><span class="col-md-8 labelDisp">User ID</span> <span class="col-md-3 col-sm-1 float-sm-center">:</span></label>
+
+                                            <div class="control-label col-md-6 col-sm-6 pl-0 idAlighn">
+                                                {{userData.UserID}}
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group col-md-6 col-sm-6 row fieldAlighn">
+                                            <label class="control-label bold col-md-6 col-sm-6 text-sm-left text-md-right text-lg-right text-xl-right pl-0"><span class="col-md-8 labelDisp">Email ID</span><span class="col-md-3 col-sm-1 float-sm-center">:</span></label>
+
+                                            <div class="control-label col-md-6 col-sm-6 pl-0 idAlighn">
+                                                {{userData.EmailAddress}}
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row marginAlighn">
+                                        <div class="form-group col-md-6 col-sm-6 row fieldAlighn">
+                                            <label class="control-label bold col-md-6 col-sm-6 text-sm-left text-md-right text-lg-right text-xl-right pl-0"><span class="col-md-8 labelDisp">First Name</span> <span class="col-md-3 col-sm-1 float-sm-center">:</span></label>
+
+                                            <div class="control-label col-md-6 col-sm-6 pl-0 idAlighn">
+                                                {{userData.FirstName}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-6 col-sm-6 row fieldAlighn">
+                                            <label class="control-label bold col-md-6 col-sm-6 text-sm-left text-md-right text-lg-right text-xl-right pl-0"><span class="col-md-8 labelDisp">Last Name</span><span class="col-md-3 col-sm-1 float-sm-center">:</span></label>
+
+                                            <div class="control-label col-md-6 col-sm-6 pl-0 idAlighn">
+                                                {{userData.LastName}}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row marginAlighn">
+                                        <div class="form-group col-md-6 col-sm-6 row fieldAlighn">
+                                            <label class="control-label bold col-md-6 col-sm-6 text-sm-left text-md-right text-lg-right text-xl-right pl-0"><span class="col-md-8 labelDisp">Password</span><span class="col-md-3 col-sm-1 float-sm-center">:</span></label>
+
+                                            <div class="control-label col-md-6 col-sm-6 pl-0 idAlighn">
+                                                {{userData.Password | pwFormat}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-6 col-sm-6 row fieldAlighn">
+                                            <label class="control-label bold col-md-6 col-sm-6 text-sm-left text-md-right text-lg-right text-xl-right pl-0"><span class="col-md-8 labelDisp">Confirm Password</span><span class="col-md-3 col-sm-1 float-sm-center">:</span>
+                                            </label>
+
+                                            <div class="control-label col-md-6 col-sm-6 pl-0 idAlighn">
+                                                {{userData.Password | pwFormat}}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row marginAlighn">
+                                        <div class="form-group col-md-6 col-sm-6 row fieldAlighn">
+                                            <label class="control-label bold col-md-6 col-sm-6 text-sm-left text-md-right text-lg-right text-xl-right pl-0"><span class="col-md-8 labelDisp">Country</span><span class="col-md-3 col-sm-1 float-sm-center">:</span></label>
+
+                                            <div class="control-label col-md-6 col-sm-6 pl-0 text-left">
+                                                {{userData.Country}}
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group col-md-6 col-sm-6 row fieldAlighn">
+                                            <label class="control-label bold col-md-6 col-sm-6 text-sm-left text-md-right text-lg-right text-xl-right pl-0"><span class="col-md-8 labelDisp">Department</span><span class="col-md-3 col-sm-1 float-sm-center">:</span></label>
+
+                                            <div class="control-label col-md-6 col-sm-6 pl-0 text-left">
+                                                {{userData.Department}}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row marginAlighn" ng-if="showMoreFieldOnCreateUser">
+                                        <div class="form-group col-md-6 col-sm-6 row fieldAlighn">
+                                            <label class="control-label bold col-md-6 col-sm-6 text-sm-left text-md-right text-lg-right text-xl-right pl-0"><span class="col-md-8 labelDisp">Role ID</span><span class="col-md-3 col-sm-1 float-sm-center">:</span></label>
+
+                                            <div class="control-label col-md-6 col-sm-6 pl-0 idAlighn">
+                                                {{userDataRoleID}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-6 col-sm-6 row fieldAlighn">
+                                            <label class="control-label bold col-md-6 col-sm-6 text-sm-left text-md-right text-lg-right text-xl-right pl-0"><span class="col-md-8 labelDisp">Reset Password</span><span class="col-md-3 col-sm-1 float-sm-center">:</span>
+                                            </label>
+
+                                            <div class="control-label col-md-6 col-sm-6 pl-0 text-left">
+                                                {{userData.IsForceReset}}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row marginAlighn">
+                                        <div class="form-group col-md-6 col-sm-6 row fieldAlighn" ng-if="showMoreFieldOnCreateUser">
+                                            <label class="control-label bold col-md-6 col-sm-6 text-sm-left text-md-right text-lg-right text-xl-right pl-0"><span class="col-md-8 labelDisp">Status</span><span class="col-md-3 col-sm-1 float-sm-center">:</span></label>
+
+                                            <div class="control-label col-md-6 col-sm-6 pl-0 text-left">
+                                                {{userData.Status}}
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group col-md-6 col-sm-6 row fieldAlighn">
+                                            <label class="control-label bold col-md-6 col-sm-6 text-sm-left text-md-right text-lg-right text-xl-right pl-0"><span class="col-md-8 labelDisp">Time Zone</span><span class="col-md-3 col-sm-1 float-sm-center">:</span> </label>
+
+                                            <div class="control-label col-md-6 col-sm-6 pl-0 text-left">
+                                                {{userData.TimeZone}}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row marginAlighn" ng-if="showMoreFieldOnCreateUser">
+                                        <div class="form-group col-md-6 col-sm-6 row fieldAlighn">
+                                            <label class="control-label bold col-md-6 col-sm-6 text-sm-left text-md-right text-lg-right text-xl-right pl-0"><span class="col-md-8 labelDisp">Effective From Date</span><span class="col-md-3 col-sm-1  float-sm-center">:</span> 
+                                            </label>
+                                           
+
+                                            <div class="control-label col-md-6 col-sm-6 pl-0 idAlighn">
+                                                {{userData.EffectiveFromDate}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-6 col-sm-6 row fieldAlighn">
+                                            <label class="control-label bold col-md-6 col-sm-6 text-sm-left text-md-right text-lg-right text-xl-right pl-0"><span class="col-md-8 labelDisp">Effective Till Date</span><span class="col-md-3 col-sm-1 float-sm-center">:</span> 
+                                            </label>
+
+                                            
+
+                                            <div class="control-label col-md-6 col-sm-6 pl-0 idAlighn">
+                                                {{userData.EffectiveTillDate}}
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group col-md-6 col-sm-6 row fieldAlighn">
+                                            <label class="control-label bold col-md-6 col-sm-6 text-sm-left text-md-right text-lg-right text-xl-right pl-0"><span class="col-md-8 labelDisp">Sur Name</span> <span class="col-md-3 col-sm-1 float-sm-center">:</span></label>
+
+                                            <div class="control-label col-md-6 col-sm-6 pl-0 idAlighn">
+                                                {{userData.SurName}}
+                                                <!-- {{userData}} -->
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    </div>
+                                    </div>
+
+
+
+                                    <div>
+                                        <h6 class="bold">User Role Association :</h6>
+                                    </div>
+                                    <div ng-repeat="createdval in userData.UserRoleAssociation track by $index" ng-if="userData.UserRoleAssociation[$index]">
+                                       
+                                        <div class="listView tableAlighn">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                       <th>#</th>
+                                                       <th class="theaderWidth">Role ID</th>
+                                                       <th class="theaderWidth">Status</th>
+                                                       <th>Effective From Date</th>
+                                                       <th>Effective Till Date</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>{{$index+1}}</td>
+                                                        <td>{{userData.UserRoleAssociation[$index].RoleID}}</td>
+                                                        <td>{{userData.UserRoleAssociation[$index].Status}}</td>
+                                                        <td>{{userData.UserRoleAssociation[$index].EffectiveFromDate}}</td>
+                                                        <td>{{userData.UserRoleAssociation[$index].EffectiveTillDate}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                       
+                                       
+                                       
+                                       
+                                       
+                                       
+                                       
+                                        <!-- <label class="control-label bold col-md-2 col-sm-2 text-sm-left text-md-right text-lg-right text-xl-right">Role {{$index+1}}: </label>
+                                        <div class="clearfix"></div><br />
+                                        <div class="row marginAlighn">
+                                            <div class="form-group col-md-5 col-sm-5 row fieldAlighn">
+                                                <label class="control-label bold col-md-6                                                                           col-sm-6 text-sm-left text-md-right text-lg-right text-xl-right">Role
+                                                    ID: </label>
+
+                                                <div class="control-label col-md-6 col-sm-6 idAlighn">
+                                                    {{userData.UserRoleAssociation[$index].RoleID}}
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-5 col-sm-5 row fieldAlighn">
+                                                <label class="control-label bold col-md-6                                                                       col-sm-6 text-sm-left text-md-right text-lg-right text-xl-right">Status
+                                                    : </label>
+
+                                                <div class="control-label col-md-6 col-sm-6 idAlighn">
+                                                    {{userData.UserRoleAssociation[$index].Status}}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row marginAlighn">
+                                            <div class="form-group col-md-5 col-sm-5 row fieldAlighn">
+                                                <label class="control-label bold col-md-6                                                                       col-sm-6 text-sm-left text-md-right text-lg-right text-xl-right">Effective
+                                                    From Date : </label>
+
+                                                <div class="control-label col-md-6 col-sm-6 idAlighn">
+                                                    {{userData.UserRoleAssociation[$index].EffectiveFromDate}}
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-5 col-sm-5 row fieldAlighn">
+                                                <label class="control-label bold col-md-6                                                                   col-sm-6 text-sm-left text-md-right text-lg-right text-xl-right">Effective
+                                                    Till Date : </label>
+
+                                                <div class="control-label col-md-6 col-sm-6 idAlighn">
+                                                    {{userData.UserRoleAssociation[$index].EffectiveTillDate}}
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12">
+                                            <div class="col-md-9 alighntext">
+
+                                                <button type="button" class="btn btnStyle  green" ng-click="back2to1()" ng-show="current2"><i class="fa fa-arrow-circle-left"></i> Back
+                                                </button>
+                                                <button type="button" class="btn btnStyle  green" ng-if="current2 && !showMoreFieldOnCreateUser" ng-click="ConfirmCreateUser()">Submit <i
+                                                        class="m-icon-swapright m-icon-white"></i></button>
+                                                <button type="button" class="btn btnStyle  green" ng-if="current2 && showMoreFieldOnCreateUser" ng-click="ConfirmCreateUserbySuperAdmin(userData);backupdataDraft(userData)">Submit
+                                                    <i class="m-icon-swapright m-icon-white"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function() {
+
+        $('[data-toggle="popover"]').popover();
+        $('body').on('click', function(e) {
+            $('[data-toggle="popover"]').each(function() {
+                //the 'is' for buttons that trigger popups
+                //the 'has' for icons within a button that triggers a popup
+                if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover')
+                    .has(e.target).length === 0) {
+                    $(this).popover('hide');
+                }
+            });
+        });
+
+        // <!-- <!-- $('.DatePicker').datepicker({ -->
+        // <!-- format:"YYYY-MM-DD", -->
+        // <!-- useCurrent: false, -->
+        // <!-- showClear: true -->
+
+        // <!-- }) --> -->
+
+
+        $('.input-group-date').on('click focus', function(e) {
+            $(this).prev().focus().click()
+        });
+    })
+</script>
